@@ -9,3 +9,19 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.lista{
+    list-style: none;
+    border: 1px solid grey;
+    width: 25rem;
+    font-size: 1.5rem;
+}
+input{
+    border: none;
+    width: 100%;
+}
+body{
+    background-color: rgb(182, 179, 179);
+}
+.container{
+    width: 30rem;
+}
