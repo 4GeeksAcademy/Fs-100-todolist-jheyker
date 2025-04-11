@@ -6,10 +6,10 @@ export const Lista = () => {
      useEffect(() => { 
         if (lista.length == 0) setLista([{ tarea: 'Empieza tu lista de tarea', id: Math.floor(Math.random() * 99999999)}]);
     }, []) 
-    const handleSubmit = e => {
-        e.preventDefault();
+    const handleSubmit =(nuevaTarea) => {
+        nuevaTarea.preventDefault();
         setLista([...lista, { tarea, id: Math.floor(Math.random() * 99999999) }])
-        tarea('');
+        setTarea('');
     }
     const handleClick = (id) => {
         let aux = lista.filter((el,i)=> el.id!=id)
