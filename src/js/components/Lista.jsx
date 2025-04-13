@@ -3,16 +3,14 @@ export const Lista = () => {
     
     const [lista, setLista] = useState([]);
     const [tarea, setTarea] = useState('');
-     useEffect(() => { 
-        if (lista.length == 0) setLista([{ tarea: 'Empieza tu lista de tarea', id: Math.floor(Math.random() * 99999999)}]);
-    }, []) 
+
     const handleSubmit =(nuevaTarea) => {
         nuevaTarea.preventDefault();
-        setLista([...lista, { tarea, id: Math.floor(Math.random() * 99999999) }])
+        setLista([...lista, tarea])
         setTarea('');
     }
-    const handleClick = (id) => {
-        let aux = lista.filter((el,i)=> el.id!=id)
+    const handleClick = (index) => {
+        let aux = lista.filter((el,i)=> i !=index)
         setLista(aux)
     }
 
@@ -26,7 +24,7 @@ return(
             <input type="submit" hidden />
         </form>
         </li>
-       {lista.map((el, i) => <li className="lista d-flex justify-content-between p-1" key={i}> {el.tarea} <span  onClick={() => handleClick(el.id)}><i className="fa-solid fa-trash"></i></span></li>)}
+       {lista.map((el, i) => <li className="lista d-flex justify-content-between p-1" key={i}> {el} <span  onClick={() => handleClick(i)}><i className="fa-solid fa-trash"></i></span></li>)}
        <footer className="border border-secondary">{lista.length} items left</footer>
     </ul>
     </div>
