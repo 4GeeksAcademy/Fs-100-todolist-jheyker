@@ -7,7 +7,7 @@ import { Lista } from "./Lista";
 //create your first component
 const Home = () => {
 	return (
-		<div className="container d-flex align-items-center flex-column bg-white my-5 border border-black">
+		<div className="container contenedor d-flex align-items-center flex-column bg-white my-5 border border-black">
 			<h1>Tareas</h1>
            <Lista/>
 		</div>
